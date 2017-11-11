@@ -5,6 +5,9 @@
     <title>Steem Price Widget</title>
     <!-- Created By @mooncryption on the STEEM Blockchain  -->
     <!-- https://steemit.com/@mooncryption | https://utopian.io/@mooncryption -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
@@ -23,8 +26,8 @@
         }
 
         #main {
-            border-radius: 25px;
-            border: 2px solid rgb(44, 103, 231);
+            /*border-radius: 25px;(/
+            /*border: 2px solid rgb(44, 103, 231);*/
             background-image: url("steembg.jpg");
             background-repeat: repeat;
             background-color: rgba(255, 255, 255, 0.247);
@@ -74,7 +77,32 @@
                 opacity: 0;
             }
         }
+        .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
 
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
         @keyframes sk-scaleout {
             0% {
                 -webkit-transform: scale(0);
@@ -86,18 +114,29 @@
                 opacity: 0;
             }
         }
+        
+        
+        
     </style>
     <center>
-        <div id="main">
-            <span id="invisibleBreak1"></span>
+        <div class="panel panel-primary">
+      <div class="panel-heading">Panel with panel-primary class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+        <div id="main" class="panel panel-primary">
+            <div class="panel-heading">
             <h3 id="pricetitle">Steem Price</h3>
+            </div>
+            <div class="panel-body">
             <span id="steemprice">
                     <span class="loading"><span class="invisible">......</span></span>
             </span>
             <br>
             <br>
             
-            <div class="srcs" id="bottomtext">
+            <div class="srcs tooltip" id="bottomtext">
+                i
+                <span class="tooltiptext">
                 Sources:
                 <span class="srclink">
                     <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
@@ -107,7 +146,10 @@
                 <br>
                 <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
                 <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
+                </span>
             </div>
+            </div>
+        </div>
         </div>
     </center>
 </body>
