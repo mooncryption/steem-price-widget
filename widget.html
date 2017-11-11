@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
@@ -20,7 +19,7 @@
 <body>
     <style>
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Barlow', serif;
         }
 
         h3 {
@@ -47,7 +46,6 @@
 
         .srcs {
             text-decoration: none;
-            font-size: 1%;
         }
 
         .invisible {
@@ -55,8 +53,8 @@
         }
 
         #price {
-            font-family: 'Inconsolata', monospace;
-            font-size: 180%;
+            font-family: 'Oswald', sans-serif;
+            font-size: 300%;
         }
 
         .loading {
@@ -80,31 +78,44 @@
             }
         }
 
-        .tooltip {
+        .tooltipx {
             position: relative;
             display: inline-block;
+            color: gray;
             border-bottom: 1px dotted black;
         }
 
-        .tooltip .tooltiptext {
+        .tooltipx .tooltiptextx {
             visibility: hidden;
-            width: 120px;
-            background-color: black;
+            width: 240px;
+            background-color: #555;
             color: #fff;
             text-align: center;
             border-radius: 6px;
             padding: 5px 0;
-
-            /* Position the tooltip */
             position: absolute;
             z-index: 1;
-            top: 100%;
+            top: 125%;
             left: 50%;
-            margin-left: -60px;
+            margin-left: -120px;
+            opacity: 0;
+            transition: opacity 1s;
         }
 
-        .tooltip:hover .tooltiptext {
+        .tooltipx .tooltiptextx::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #555 transparent;
+        }
+
+        .tooltipx:hover .tooltiptextx {
             visibility: visible;
+            opacity: 1;
         }
 
         @keyframes sk-scaleout {
@@ -123,7 +134,7 @@
             font-family: 'Barlow', sans-serif;
             color: white;
             text-align: center;
-            font-size: 30px;
+            font-size: 250%;
         }
 
         .panel-primary>.panel-heading {
@@ -150,19 +161,20 @@
                 <br>
                 <br>
 
-                <div class="srcs tooltip" id="bottomtext">
-                    i
-                    <span class="tooltiptext">
-                        Sources:
-                        <span class="srclink">
-                            <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
-                            <a style="text-decoration: none" href="https://poloniex.com">Poloniex</a>,
-                            <a style="text-decoration: none" href="https://coinmarketcap.com">CoinMarketCap.</a>
+                <div class="srcs" id="bottomtext">
+                    <div class="tooltipx">i
+                        <span class="tooltiptextx">
+                            Sources:
+                            <span class="srclink">
+                                <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
+                                <a style="text-decoration: none" href="https://poloniex.com">Poloniex</a>,
+                                <a style="text-decoration: none" href="https://coinmarketcap.com">CoinMarketCap.</a>
+                            </span>
+                            <br>
+                            <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
+                            <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
                         </span>
-                        <br>
-                        <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
-                        <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
