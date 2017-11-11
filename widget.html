@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <base target="_blank" style="text-decoration: none">
@@ -77,32 +77,34 @@
                 opacity: 0;
             }
         }
+
         .tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -60px;
-}
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
         @keyframes sk-scaleout {
             0% {
                 -webkit-transform: scale(0);
@@ -114,42 +116,51 @@
                 opacity: 0;
             }
         }
-        
+
         .pricehead {
             color: white;
             text-align: center;
             font-size: 30px;
             font-family: Raleway, serif;
         }
-        
-        
+
+        .panel-primary>.panel-heading {
+            background-color: rgb(10, 195, 241) !important;
+            border-color: rgb(10, 195, 241) !important;
+            border-left-color: rgb(10, 195, 241) !important;
+            border-top-color: rgb(10, 195, 241) !important;
+            border-bottom-color: rgb(10, 195, 241) !important;
+            border-left-color: rgb(10, 195, 241) !important;
+        }
     </style>
     <center>
         <div id="main" class="panel panel-primary">
             <div class="panel-heading">
-            <span class="pricehead">STEEM Price</span>
+                <span class="pricehead">STEEM Price</span>
             </div>
             <div class="panel-body">
-            <span id="steemprice">
-                    <span class="loading"><span class="invisible">......</span></span>
-            </span>
-            <br>
-            <br>
-            
-            <div class="srcs tooltip" id="bottomtext">
-                i
-                <span class="tooltiptext">
-                Sources:
-                <span class="srclink">
-                    <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
-                    <a style="text-decoration: none" href="https://poloniex.com">Poloniex</a>,
-                    <a style="text-decoration: none" href="https://coinmarketcap.com">CoinMarketCap.</a>
+                <span id="steemprice">
+                    <span class="loading">
+                        <span class="invisible">......</span>
+                    </span>
                 </span>
                 <br>
-                <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
-                <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
-                </span>
-            </div>
+                <br>
+
+                <div class="srcs tooltip" id="bottomtext">
+                    i
+                    <span class="tooltiptext">
+                        Sources:
+                        <span class="srclink">
+                            <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
+                            <a style="text-decoration: none" href="https://poloniex.com">Poloniex</a>,
+                            <a style="text-decoration: none" href="https://coinmarketcap.com">CoinMarketCap.</a>
+                        </span>
+                        <br>
+                        <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
+                        <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
+                    </span>
+                </div>
             </div>
         </div>
         </div>
