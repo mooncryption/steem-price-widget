@@ -2,6 +2,8 @@ Steem Price Widget is a flexible HTML/JavaScript widget for your website. The wi
 
 The official website for Steem Price Widget is [available here](https://mooncryption.github.io/steem-price-widget). Basic usage instructions are available below.
 
+<center>![cover](https://steemitimages.com/DQmPGK4G3Pu4sg8yz49im6wCCqHcMu8GDuD6EcZj1xb2eBz/steem-price-widget-%40mooncryption-opensource.png)</center>
+
 ### Basic Usage
 To include Steem Price Widget, simply add the following code anywhere in your website:
 ```javascript
