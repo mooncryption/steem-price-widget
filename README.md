@@ -9,9 +9,9 @@ The official website for Steem Price Widget is [available here](https://mooncryp
 ### Basic Usage
 To include Steem Price Widget, simply add the following code anywhere in your website:
 ```javascript
-<iframe src="https://mooncryption.github.io/steem-price-widget/widget.html" width="200px" height="150px" frameBorder="0"></iframe>
+<iframe src="https://mooncryption.github.io/steem-price-widget/widget.html" width="240px" height="180px" frameBorder="0"></iframe>
 ```
-You may play around with the `width` and `height` parameters, as long as `width` is at least `200px` and `height` is at least `150px`. The `frameBorder` parameter can also be toggled, but `0` is the best-looking setting, to avoid extra borders.
+You may play around with the `width` and `height` parameters, as long as `width` is at least `240px` and `height` is at least `180px`. The `frameBorder` parameter can also be toggled, but `0` is the best-looking setting, to avoid extra borders.
 
 ### Advanced Usage
 For advanced usage instructions, see our official website [here](https://mooncryption.github.io/steem-price-widget#advanced-usage).
