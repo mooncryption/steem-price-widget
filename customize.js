@@ -15,5 +15,6 @@ function compilewidget() {
 }
 
 window.onload = function() {
+    setTimeout(compilewidget, 100);
     // setInterval(compilewidget, 1000);
 }
