@@ -157,6 +157,10 @@ function useQueryVars() {
         document.getElementById("invisibleBreak1").innerHTML = "<br>";
         textlessWidget = 1;
     }
+    if ((getParameterByName("base") == "BTC") || (getParameterByName("base") == "1") || (getParameterByName("base") == "bitcoin")) {
+        basecur = 1;
+        steemPrice();
+    }
 }
 
 window.onload = function () {
