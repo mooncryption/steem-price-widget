@@ -11,6 +11,7 @@ function compilewidget() {
     }
     var params = "background=" + toString(choiceBG) + "&border=" + toString(choiceBorder) + "&base=" + toString(choiceBase);
     var code = "<iframe src=\"https://mooncryption.github.io/steem-price-widget/widget.html?" + params + "\"width=\"" + choiceWidth + "\" height=\"" + choiceHeight + "\" frameBorder=\"0\"></iframe>";
+    console.log("USING CODE: " + code);
     document.getElementById("widgetsample").innerHTML = code;
 }
 
