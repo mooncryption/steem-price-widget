@@ -57,7 +57,7 @@ function poloniexPrice() {
             pbtcprice = (parseFloat(pbtcres["highestBid"])) + (parseFloat(pbtcres["lowestAsk"])) + (parseFloat(pbtcres["last"]));
             pbtcprice = pbtcprice / 3.0;
             btcpoloniex = pbtcprice;
-            btcpricesum = (btcpoloniex + btcbittrex + 0.0)/(2.0);
+            btcpricesum = (btcpoloniex + btcbittrex + 0.0) / (2.0);
             prices["poloniex"] = roundTo(pprice * pbtcprice, 6);
         }));
     }));
@@ -95,9 +95,10 @@ function steemPrice() {
     var total = prB + prP + prC;
     total = roundTo((total / 3.0), 3)
     if (basecur == 1) {
-        total = (total + 0.0)/(btcpricesum);
+        total = (total + 0.0) / (btcpricesum);
         total = roundTo(total, 6);
     }
+    
     var xstr = total.toString();
     if (xstr.indexOf(".") <= -1) {
         xstr = xstr + ".00";
@@ -130,13 +131,21 @@ function steemPrice() {
     document.getElementById("steemprice").innerHTML = xstr;
     document.getElementById("24change").innerHTML = change24;
     if (change24.indexOf("-") != -1) {
-        document.getElementById("24change").className = "negativechange";
+        document.getElementById("24change").className = "negativechange" + toString(basecur);
     } else {
-        document.getElementById("24change").className = "positivechange";
+        document.getElementById("24change").className = "positivechange" + toString(basecur);
     }
     if ((textlessWidget == 1) && (previouslySetPrice == 1)) {
         document.getElementById("price").style.fontSize = "300%";
     }
+    basestr = "USD";
+    if (basecur == 1) {
+        basestr = "BTC";
+    }
+    document.getElementById("basecurrency1").innerHTML = basestr;
+    // document.getElementById("basecurrency2").innerHTML = basestr;
+    // document.getElementById("basecurrency3").innerHTML = basestr;
+    document.getElementsByClassName("basecurrency").innerHTML = basestr;
     return total;
 }
 
@@ -177,11 +186,11 @@ window.onload = function () {
         console.log("Triggering price update...")
         steemPrice();
     });
-    $(".basecurrency").click(function() {
+    $(".basecurrency").click(function () {
         console.log("base currency clicked");
         basestr = "BTC";
         if (basecur == 0) {
-            basecur = 1; 
+            basecur = 1;
         } else {
             basecur = 0;
             basestr = "USD";
