@@ -142,22 +142,26 @@ function steemPrice() {
 
 function useQueryVars() {
     if ((getParameterByName("border") == "false") || (getParameterByName("border") == "0") || (getParameterByName("border") == "False")) {
+        console.log("URL VARS | activating border false");
         document.getElementById("main").style.borderRadius = "0px";
         document.getElementById("main").style.border = "0px";
         document.getElementById("main").style.borderColor = "white";
     }
     if ((getParameterByName("background") == "false") || (getParameterByName("background") == "0") || (getParameterByName("background") == "False")) {
+        console.log("URL VARS | activating background false");
         document.getElementById("main").style.background = "";
         document.getElementById("main").style.backgroundImage = "";
         document.getElementById("main").style.backgroundSize = "0";
     }
     if ((getParameterByName("text") == "false") || (getParameterByName("text") == "0") || (getParameterByName("text") == "False")) {
+        console.log("URL VARS | activating text false");
         document.getElementById("pricetitle").style.display = "none";
         document.getElementById("bottomtext").style.display = "none";
         document.getElementById("invisibleBreak1").innerHTML = "<br>";
         textlessWidget = 1;
     }
     if ((getParameterByName("base") == "BTC") || (getParameterByName("base") == "1") || (getParameterByName("base") == "bitcoin")) {
+        console.log("URL VARS | activating basecurrency BTC");
         basecur = 1;
         steemPrice();
     }
