@@ -2,6 +2,14 @@ var code = "<h3>Result here :) </h3>"
 function compilewidget() {
     var choiceWidth = parseFloat(document.getElementById("choicewidth").value);
     var choiceHeight = parseFloat(document.getElementById("choiceheight").value);
+    if (choiceWidth < 280) {
+        choiceWidth = 280;
+        document.getElementById("choicewidth").value = 280;
+    }
+    if (choiceHeight < 180) {
+        choiceHeight = 280;
+        document.getElementById("choiceheight").value = 280;
+    }
     var prechoiceBG = !(document.getElementById("choicenobg").checked);
     var choiceBG = "false";
     if (prechoiceBG == true) {
