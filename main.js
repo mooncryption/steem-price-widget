@@ -130,10 +130,14 @@ function steemPrice() {
     // console.log("Current Average STEEM Price: " + xstr)
     document.getElementById("steemprice").innerHTML = xstr;
     document.getElementById("24change").innerHTML = change24;
+    basecurstring = "0";
+    if (basecur == 1) {
+        basecurstring = "1";
+    }
     if (change24.indexOf("-") != -1) {
-        document.getElementById("24change").className = "negativechange" + toString(basecur);
+        document.getElementById("24change").className = "negativechange" + basecurstring;
     } else {
-        document.getElementById("24change").className = "positivechange" + toString(basecur);
+        document.getElementById("24change").className = "positivechange" + basecurstring;
     }
     if ((textlessWidget == 1) && (previouslySetPrice == 1)) {
         document.getElementById("price").style.fontSize = "300%";
