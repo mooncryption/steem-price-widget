@@ -88,7 +88,7 @@
         .tooltipx .tooltiptextx {
             visibility: hidden;
             width: 240px;
-            background-color: rgba(97, 131, 146, 0.76);
+            background-color: rgba(99, 99, 99, 0.9);
             color: #fff;
             text-align: center;
             border-radius: 6px;
@@ -151,11 +151,31 @@
             border-bottom-color: rgb(10, 195, 241) !important;
             border-left-color: rgb(10, 195, 241) !important;
         }
+
+        .basecurrency {
+            color: rgb(110, 110, 110);
+            font-family: "Barlow", sans-serif;
+        }
+        .positivechange {
+            color: green;
+        }
+        .negativechange {
+            color: red;
+            font-size: 15px;
+            // bottom: 40px;
+            top: -18px;
+            right: 35px;
+        }
+        #steemwhite {
+            vertical-align: middle;
+        }
     </style>
     <center>
         <div id="main" class="panel panel-primary">
             <div class="panel-heading">
-                <span class="pricehead">STEEM Price</span>
+
+                <img id="steemwhite" src="./fullsteemwhite.png" width="100px">
+
             </div>
             <div class="panel-body">
                 <span id="steemprice">
@@ -163,9 +183,11 @@
                         <span class="invisible">......</span>
                     </span>
                 </span>
+                <span class="basecurrency" id="basecurrency1">&nbsp;USD</span><sup id="24change"></sup>
                 <br>
                 <div class="srcs" id="bottomtext">
-                    <div class="tooltipx">i
+                    <div class="tooltipx">
+                        <span class="glyphicon glyphicon-info-sign"></span>
                         <span class="tooltiptextx">
                             Sources:
                             <span class="srclink">
@@ -183,6 +205,7 @@
         </div>
         </div>
     </center>
+
 </body>
 
 </html>
