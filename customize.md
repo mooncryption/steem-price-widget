@@ -16,9 +16,11 @@
 <br><br>
 
 ### Copy your Source Code!
-<code id="widgetcode">
+```html
+<span id="widgetcode">
 loading..
-</code>
+</span>
+```
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
 <script src="customize.js"></script>
