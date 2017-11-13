@@ -1,7 +1,9 @@
 
 var prices = { "bittrex": 0, "poloniex": 0, "coinMC": 0 };
-var basecur = 0; var change24 = "";
+var basecur = 0; var numbasecurs = 3; var change24 = "";
+var curtostring = ["USD", "BTC", "SBD"];
 var btcpricesum = 1; var btcbittrex = 1; var btcpoloniex = 1;
+var sbdpricesum = 1;
 var previouslySetPrice = 0;
 var textlessWidget = 0;
 function roundTo(n, digits) {
@@ -67,8 +69,16 @@ function coinMCPrice() {
     var coinSrc = "https://api.coinmarketcap.com/v1/ticker/steem/";
     ($.get(coinSrc, function (response) {
         priceC = parseFloat(response[0]["price_usd"]);
-        change24 = " (" + response[0]["percent_change_24h"] + "%)";
+        var percentResponse = response[0]["percent_change_24h"];
+        if (percentResponse.indexOf("-") <= -1) {
+            percentResponse = "+" + percentResponse;
+        }
+        change24 = " (" + percentResponse + "%)";
         prices["coinMC"] = roundTo(priceC, 6);
+    }));
+    var sbdSrc = "https://api.coinmarketcap.com/v1/ticker/steem-dollars/";
+    ($.get(sbdSrc, function (response) {
+        sbdpricesum = parseFloat(response[0]["price_usd"]);
     }));
 }
 
@@ -97,6 +107,9 @@ function steemPrice() {
     if (basecur == 1) {
         total = (total + 0.0) / (btcpricesum);
         total = roundTo(total, 6);
+    } else if (basecur == 2) {
+        total = (total + 0.0) / (sbdpricesum);
+        total = roundTo(total, 3);
     }
     
     var xstr = total.toString();
@@ -130,9 +143,11 @@ function steemPrice() {
     // console.log("Current Average STEEM Price: " + xstr)
     document.getElementById("steemprice").innerHTML = xstr;
     document.getElementById("24change").innerHTML = change24;
-    basecurstring = "0";
+    var basecurstring = "0";
     if (basecur == 1) {
         basecurstring = "1";
+    } else if (basecur == 2) {
+        basecurstring = "0";
     }
     if (change24.indexOf("-") != -1) {
         document.getElementById("24change").className = "negativechange" + basecurstring;
@@ -142,10 +157,7 @@ function steemPrice() {
     if ((textlessWidget == 1) && (previouslySetPrice == 1)) {
         document.getElementById("price").style.fontSize = "300%";
     }
-    basestr = "USD";
-    if (basecur == 1) {
-        basestr = "BTC";
-    }
+    basestr = curtostring[basecur];
     document.getElementById("basecurrency1").innerHTML = basestr;
     // document.getElementById("basecurrency2").innerHTML = basestr;
     // document.getElementById("basecurrency3").innerHTML = basestr;
@@ -173,12 +185,17 @@ function useQueryVars() {
         document.getElementById("invisibleBreak1").innerHTML = "<br>";
         textlessWidget = 1;
     }
-    if ((getParameterByName("base") == "BTC") || (getParameterByName("base") == "1") || (getParameterByName("base") == "bitcoin")) {
+    if ((getParameterByName("base") == "BTC") || (getParameterByName("base") == "1") || (getParameterByName("base") == "btc")) {
         console.log("URL VARS | activating basecurrency BTC");
         basecur = 1;
         steemPrice();
     }
-}
+    if ((getParameterByName("base") == "SBD") || (getParameterByName("base") == "2") || (getParameterByName("base") == "sbd")) {
+        console.log("URL VARS | activating basecurrency SBD");
+        basecur = 2;
+        steemPrice();
+    }
+} 
 
 window.onload = function () {
     useQueryVars();
@@ -192,17 +209,12 @@ window.onload = function () {
     });
     $(".basecurrency").click(function () {
         console.log("base currency clicked");
-        basestr = "BTC";
-        if (basecur == 0) {
-            basecur = 1;
-        } else {
-            basecur = 0;
-            basestr = "USD";
-        }
-        document.getElementById("basecurrency1").innerHTML = basestr;
+        basecur = (basecur+1) % numbasecurs;
+        var basestring = curtostring(basecur);
+        document.getElementById("basecurrency1").innerHTML = basestring;
         // document.getElementById("basecurrency2").innerHTML = basestr;
         // document.getElementById("basecurrency3").innerHTML = basestr;
-        document.getElementsByClassName("basecurrency").innerHTML = basestr;
+        document.getElementsByClassName("basecurrency").innerHTML = basestring;
     });
     setInterval(steemPrice, 4000);
 }

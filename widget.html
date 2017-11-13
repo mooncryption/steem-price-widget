@@ -36,12 +36,16 @@
 
         .srclink {
             text-decoration: none;
-            color: cornflowerblue;
+            color: white;
+        }
+
+        .indlink {
+            color: rgb(0, 204, 255) !important;
         }
 
         #createdby {
             text-decoration: none;
-            color: black;
+            color: rgb(10, 172, 45);
         }
 
         .srcs {
@@ -87,8 +91,8 @@
 
         .tooltipx .tooltiptextx {
             visibility: hidden;
-            width: 240px;
-            background-color: rgba(99, 99, 99, 0.9);
+            width: 260px;
+            background-color: rgba(99, 99, 99, 0.95);
             color: #fff;
             text-align: center;
             border-radius: 6px;
@@ -97,20 +101,20 @@
             z-index: 1;
             bottom: 125%;
             left: 50%;
-            margin-left: -120px;
+            margin-left: -130px;
             opacity: 0;
-            transition: opacity 1s;
+            transition: opacity 0.4s;
         }
 
         .tooltipx .tooltiptextx::after {
             content: "";
             position: absolute;
-            bottom: 100%;
+            top: 100%;
             left: 50%;
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
-            border-color: transparent transparent transparent transparent;
+            border-color: rgba(99, 99, 99, 0.95) transparent transparent transparent;
         }
 
         .tooltipx:hover .tooltiptextx {
@@ -151,6 +155,8 @@
             border-bottom-color: rgb(10, 195, 241) !important;
             border-left-color: rgb(10, 195, 241) !important;
         }
+
+        
 
         .basecurrency {
             color: rgb(110, 110, 110);
@@ -209,15 +215,15 @@
                     <div class="tooltipx">
                         <span class="glyphicon glyphicon-info-sign"></span>
                         <span class="tooltiptextx">
-                            Sources:
+                            Data:
                             <span class="srclink">
-                                <a style="text-decoration: none" href="https://bittrex.com">Bittrex</a>,
-                                <a style="text-decoration: none" href="https://poloniex.com">Poloniex</a>,
-                                <a style="text-decoration: none" href="https://coinmarketcap.com">CoinMarketCap.</a>
+                                <a style="text-decoration: none" class="indlink" href="https://bittrex.com">Bittrex</a>,
+                                <a style="text-decoration: none" class="indlink" href="https://poloniex.com">Poloniex</a>,
+                                <a style="text-decoration: none" class="indlink" href="https://coinmarketcap.com">CoinMarketCap.</a>
                             </span>
                             <br>
-                            <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption | </a>
-                            <a style="text-decoration: none" id="terms" href="terms.html">Terms</a>
+                            <a style="text-decoration: none" id="createdby" href="https://github.com/mooncryption/steem-price-widget">Created by @mooncryption</a> <span style="color: white;"> | </span>
+                            <a style="text-decoration: none" class="indlink" id="terms" href="terms.html">Terms</a>
                         </span>
                     </div>
                 </div>
