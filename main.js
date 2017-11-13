@@ -172,6 +172,23 @@ function useQueryVars() {
         document.getElementById("main").style.border = "0px";
         document.getElementById("main").style.borderColor = "white";
     }
+    if ((getParameterByName("bcolor") != "") || (getParameterByName("bcolor") != "0") || (getParameterByName("bcolor") != "false")) {
+        var chosenbordercolor = getParameterByName("bcolor");
+        console.log("URL VARS | activating border color: " + chosenbordercolor);
+        if ((chosenbordercolor == "steem") || (chosenbordercolor == "Steem") || (chosenbordercolor == "steemblue") || (chosenbordercolor == "default")) {
+            chosenbordercolor = "rgb(10, 195, 241)";
+        }
+        document.getElementById("main").style.borderColor = chosenbordercolor;
+    }
+    if ((getParameterByName("bradius") != "") || (parseFloat(getParameterByName("bradius")) > 0) || (getParameterByName("bradius") != "false")) {
+        var chosenbradius = (getParameterByName("bradius"));
+        console.log("URL VARS | activating border radius: " + chosenbradius);
+        if (chosenbradius > -1) {
+            var chosenbstring = chosenbradius + "px";
+            document.getElementById("main").style.setProperty("border-radius", chosenbstring, "important");
+            document.getElementById("mainpanelheading").style.setProperty("border-radius", chosenbstring, "important");
+        }
+    }
     if ((getParameterByName("background") == "false") || (getParameterByName("background") == "0") || (getParameterByName("background") == "False")) {
         console.log("URL VARS | activating background false");
         document.getElementById("main").style.background = "";

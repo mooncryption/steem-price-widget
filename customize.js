@@ -1,5 +1,6 @@
 var code = "<h3>Result here :) </h3>"
 function compilewidget() {
+
     var choiceWidth = parseFloat(document.getElementById("choicewidth").value);
     var choiceHeight = parseFloat(document.getElementById("choiceheight").value);
     if (choiceWidth < 320 || choiceWidth > 1080) {
@@ -24,7 +25,11 @@ function compilewidget() {
     if ((document.getElementById("choiceusebtc").checked) == true) {
         choiceBase = "BTC";
     }
-    var params = "background=" + choiceBG + "&border=" + choiceBorder + "&base=" + choiceBase;
+    var choicebcolor = "default";
+    choicebcolor = (document.getElementById("choicebcolor").value);
+    var choicebradius = -1;
+    choicebradius = parseFloat(document.getElementById("choicebradius").value);
+    var params = "background=" + choiceBG + "&border=" + choiceBorder + "&base=" + choiceBase + "&bcolor=" + choicebcolor + "&bradius=" + choicebradius;
     console.log("USING PARAMS: " + params);
     code = "<iframe src=\"https://mooncryption.github.io/steem-price-widget/widget.html?" + params + "\" width=\"" + choiceWidth + "\" height=\"" + choiceHeight + "\" frameBorder=\"0\"></iframe>";
     var wcode = "&lt;iframe src=\"https://mooncryption.github.io/steem-price-widget/widget.html?" + params + "\" width=\"" + choiceWidth + "\" height=\"" + choiceHeight + "\" frameBorder=\"0\"&gt;&lt;/iframe&gt;";
