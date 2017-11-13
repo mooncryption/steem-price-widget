@@ -14,16 +14,11 @@ In the `<iframe>` element, the `src` url can also have URL parameters. URL Param
 </center><br>
 In the above, everything after the `?` is a URL parameter. Specifically, the above URL, if used in the `<iframe>`'s `src` link, would turn off the border and background.
 ##### URL Parameter Options
-Here are the possible URL parameters:
-- **`border`** [default: `true`]:
-    * `true` keeps the default dark-blue border surrounding the widget.
-    * `false` turns off the border.
-- **`background`** [default: `true`]:
-    * `true` keeps the STEEM logo background
-    * `false` turns off the background (plain white)
-- **`text`** [default: `true`]:
-    * `true` keeps the header and sources text
-    * `false` removes all text except for the price itself, and increases the price's font size
+There are many possible URL Parameters, and you can easily play with them using our **[customization tool](https://mooncryption.github.io/steem-price-widget/customize).** 
+
+The tool allows you to check options for the widget appearance/design, and get a fresh look at how the widget would be viewed with those options.
+
+You can then easily export your code to use on your website :)
 
 ### Price Calculation Algorithm
 Our widget uses three sources for price data, all with equal weight:
@@ -42,6 +37,11 @@ The price shown in the widget is an **unweighted average** of the exchange STEEM
 
 However, the end price *does* get slightly rounded. The final price shown is rounded to **3 decimal points** of precision. 
 
+### Base Currencies
+With Design 2.0, we introduced different base currencies. Clicking on the default `USD` icon would bring the price in `BTC`, and so on. 
+
+We use the same price calculation algorithm all the time to bring the rate in USD. Then, we use the current BTC rate (or other base currency rate) in USD, to convert to that base currency (if the base currency is not USD). 
+
 ### Terms of Use
 The Terms of Use goes into effect when you:
 * use this widget on your website
@@ -49,6 +49,12 @@ The Terms of Use goes into effect when you:
 * view this widget
 
 These terms are available [here](https://mooncryption.github.io/steem-price-widget/terms.html).
+
+### Thank You
+Thanks for making STEEM wonderful.
+
+Yours,
+[@mooncryption](https://steemit.com/@mooncryption)
 
 
 
