@@ -8,8 +8,8 @@
 2. Background: 
   * <input type="checkbox" onclick="compilewidget()" id="choicenobg">&nbsp;<b>Use Plain Background</b>
 3. Size:
-  * **Width**: <input type="text" width="50px" onchange="compilewidget()" id="choicewidth" name="choicewidth" value="320"> px &nbsp;&nbsp;(at least 320)
-  * **Height**: <input type="text" width="50px" onchange="compilewidget()" id="choiceheight" name="choiceheight" value="180"> px &nbsp;&nbsp;(at least 180)
+  * **Width**: <input type="text" style="width:55px;" onchange="compilewidget()" id="choicewidth" name="choicewidth" value="320"> px &nbsp;&nbsp;(at least 320)
+  * **Height**: <input type="text" style="width:55px;" onchange="compilewidget()" id="choiceheight" name="choiceheight" value="180"> px &nbsp;&nbsp;(at least 180)
 4. Border: 
   * <input type="checkbox" onclick="compilewidget()" id="choicenoborder">&nbsp;<b>Use No Border</b>
 
