@@ -4,7 +4,7 @@
 </div>
 
 1. Default Base Currency: 
-  * <input type="radio" onclick="compilewidget()" id="choiceuseusd" name="basecurrencychoice"> <b>&nbsp;Default to `USD`</b>
+  * <input type="radio" onclick="compilewidget()" id="choiceuseusd" name="basecurrencychoice" checked> <b>&nbsp;Default to `USD`</b>
   * <input type="radio" onclick="compilewidget()" id="choiceusebtc" name="basecurrencychoice"> <b>&nbsp;Default to `BTC`</b>
   * <input type="radio" onclick="compilewidget()" id="choiceusesbd" name="basecurrencychoice"> <b>&nbsp;Default to `SBD`</b>
   * _Note:_ The above choices are only defaults. <br> Simply clicking on the gray base currency <br>option in the widget will swap between the options.
