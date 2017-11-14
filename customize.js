@@ -30,9 +30,7 @@ function compilewidget() {
     }
     var choicebcolor = "default";
     choicebcolor = (document.getElementById("choicebcolor").value);
-    var choicebradius = -1;
-    choicebradius = parseFloat(document.getElementById("choicebradius").value);
-    var params = "background=" + choiceBG + "&border=" + choiceBorder + "&base=" + choiceBase + "&bcolor=" + choicebcolor + "&bradius=" + choicebradius;
+    var params = "background=" + choiceBG + "&border=" + choiceBorder + "&base=" + choiceBase + "&bcolor=" + choicebcolor + "&src=customizationv1";
     console.log("USING PARAMS: " + params);
     code = "<iframe src=\"https://mooncryption.github.io/steem-price-widget/widget.html?" + params + "\" width=\"" + choiceWidth + "\" height=\"" + choiceHeight + "\" frameBorder=\"0\"></iframe>";
     var wcode = "&lt;iframe src=\"https://mooncryption.github.io/steem-price-widget/widget.html?" + params + "\" width=\"" + choiceWidth + "\" height=\"" + choiceHeight + "\" frameBorder=\"0\"&gt;&lt;/iframe&gt;";
