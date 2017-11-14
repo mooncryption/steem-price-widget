@@ -1,3 +1,6 @@
+// customize.js
+// created by @mooncryption on STEEM
+
 var code = "<h3>Result here :) </h3>"
 function compilewidget() {
 

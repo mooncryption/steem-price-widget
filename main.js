@@ -1,3 +1,5 @@
+// main.js
+// created by @mooncryption on STEEM
 
 var prices = { "bittrex": 0, "poloniex": 0, "coinMC": 0 };
 var basecur = 0; var numbasecurs = 3; var change24 = "";
