@@ -28,6 +28,14 @@ function compilewidget() {
     if ((document.getElementById("choiceusebtc").checked) == true) {
         choiceBase = "BTC";
     }
+    if ((document.getElementById("choiceusesbd").checked) == true) {
+        choiceBase = "SBD";
+    }
+    if (choiceBorder == "false") {
+        document.getElementById("choicebcolor").style.opacity = "0.2";
+    } else {
+        document.getElementById("choicebcolor").style.opacity = "1.0";
+    }
     var choicebcolor = "default";
     choicebcolor = (document.getElementById("choicebcolor").value);
     var params = "background=" + choiceBG + "&border=" + choiceBorder + "&base=" + choiceBase + "&bcolor=" + choicebcolor + "&src=customizationv1";

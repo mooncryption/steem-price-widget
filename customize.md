@@ -4,18 +4,18 @@
 </div>
 
 1. Default Base Currency: 
-  * <input type="radio" onclick="compilewidget()" id="choiceuseusd" name="basecurrencychoice"> <b>&nbsp;Default to USD</b>
-  * <input type="radio" onclick="compilewidget()" id="choiceusebtc" name="basecurrencychoice"> <b>&nbsp;Default to BTC</b>
-  * <input type="radio" onclick="compilewidget()" id="choiceusesbd" name="basecurrencychoice"> <b>&nbsp;Default to SBD</b>
+  * <input type="radio" onclick="compilewidget()" id="choiceuseusd" name="basecurrencychoice"> <b>&nbsp;Default to `USD`</b>
+  * <input type="radio" onclick="compilewidget()" id="choiceusebtc" name="basecurrencychoice"> <b>&nbsp;Default to `BTC`</b>
+  * <input type="radio" onclick="compilewidget()" id="choiceusesbd" name="basecurrencychoice"> <b>&nbsp;Default to `SBD`</b>
   * _Note:_ The above choices are only defaults. <br> Simply clicking on the gray base currency <br>option in the widget will swap between the options.
 2. Background: 
-  * <input type="checkbox" onclick="compilewidget()" id="choicenobg">&nbsp;<b>Use Plain Background</b>
+  * <input type="checkbox" onclick="compilewidget()" id="choicenobg">&nbsp;<b>Use No Background</b>
 3. Size:
-  * **Width**: <input type="text" style="width:55px;" onchange="compilewidget()" id="choicewidth" name="choicewidth" value="320">px &nbsp;&nbsp;(at least 320)
-  * **Height**: <input type="text" style="width:55px;" onchange="compilewidget()" id="choiceheight" name="choiceheight" value="180">px &nbsp;&nbsp;(at least 180)
+  * **Width**: <input type="text" style="width:48px;" onchange="compilewidget()" id="choicewidth" name="choicewidth" value="320">px &nbsp;&nbsp;(at least 320)
+  * **Height**: <input type="text" style="width:48px;" onchange="compilewidget()" id="choiceheight" name="choiceheight" value="180">px &nbsp;&nbsp;(at least 180)
 4. Border: 
   * <input type="checkbox" onclick="compilewidget()" id="choicenoborder">&nbsp;<b>Use No Border</b>
-  * <b> Border Color: </b> <input type="text" style="width:150px;" onchange="compilewidget()" id="choicebcolor" name="choicebcolor" value="default"/> (_example:_ `purple`)
+  * <b> Border Color: </b> <input type="text" style="width:150px;" onchange="compilewidget()" id="choicebcolor" name="choicebcolor" value="steemblue"/> (_example:_ `purple`)
 <br><br>
 
 ### Copy your Source Code!
