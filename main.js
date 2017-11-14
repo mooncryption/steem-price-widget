@@ -3,6 +3,7 @@
 
 var prices = { "bittrex": 0, "poloniex": 0, "coinMC": 0 };
 var basecur = 0; var numbasecurs = 3; var change24 = "";
+var doneloading = false;
 var curtostring = ["USD", "BTC", "SBD"];
 var btcpricesum = 1; var btcbittrex = 1; var btcpoloniex = 1;
 var sbdpricesum = 1;
@@ -84,6 +85,14 @@ function coinMCPrice() {
     }));
 }
 
+function removeBaseCurrencyIfNotLoaded() {
+    if (doneloading == false) {
+        document.getElementById("basecurrency1").style.display = "none";
+    } else {
+        document.getElementById("basecurrency1").style.display = "";
+    }
+}
+
 function steemPrice() {
     bittrexPrice();
     poloniexPrice();
@@ -130,17 +139,26 @@ function steemPrice() {
     }
     if (total == 0) {
         if (previouslySetPrice == 0) {
-            xstr = "<span class=\"loading\"><span class=\"invisible\">......</span></span>";
+            xstr = "<div class=\"loading sp sp-wave\"></div>";
+            doneloading = false;
         } else {
             xstr = document.getElementById("steemprice").innerHTML;
+            doneloading = true;
         }
     } else {
         if (basecur == 0) {
             xstr = "<span id=\"price\"><b>$</b>&#8239;" + xstr + "</span>";
+            doneloading = true;
         } else {
             xstr = "<span id=\"price\">&#8239;" + xstr + "</span>";
+            doneloading = true;
         }
         previouslySetPrice = 1;
+    }
+    if (doneloading == false) {
+        document.getElementById("basecurrency1").style.display = "none";
+    } else {
+        document.getElementById("basecurrency1").style.display = "";
     }
     // console.log("Current Average STEEM Price: " + xstr)
     document.getElementById("steemprice").innerHTML = xstr;
@@ -219,6 +237,7 @@ function useQueryVars() {
 window.onload = function () {
     useQueryVars();
     setTimeout(steemPrice, 500);
+    removeBaseCurrencyIfNotLoaded();
     setTimeout(useQueryVars, 1000);
     setTimeout(steemPrice, 1500);
     setTimeout(steemPrice, 3000);
