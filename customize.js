@@ -55,7 +55,7 @@ function compilewidget() {
         choiceBase = "SBD";
     }
     if (choiceBorder == "false") {
-        // document.getElementById("choicebcolor").style.opacity = "0.2";
+        document.getElementById("choicebcolor").style.opacity = "0.4";
         document.getElementById("choicebcolor").setAttribute("disabled", "true");
     } else {
         document.getElementById("choicebcolor").style.opacity = "1.0";
