@@ -4,9 +4,9 @@
 var code = "<h3>Result here :) </h3>"
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
-  }
+}
 
-  
+
 function compilewidget() {
 
     var choiceWidth = parseFloat(document.getElementById("choicewidth").value);

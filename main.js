@@ -85,11 +85,15 @@ function coinMCPrice() {
     }));
 }
 
-function removeBaseCurrencyIfNotLoaded() {
+function removeLabelsIfNotLoaded() {
     if (doneloading == false) {
+        console.log("deactivating labels [!loaded]");
         document.getElementById("basecurrency1").style.display = "none";
+        document.getElementById("bottomtext").style.display = "none";
     } else {
+        console.log("reactivating labels [loaded]");
         document.getElementById("basecurrency1").style.display = "";
+        document.getElementById("bottomtext").style.display = "";
     }
 }
 
@@ -122,7 +126,7 @@ function steemPrice() {
         total = (total + 0.0) / (sbdpricesum);
         total = roundTo(total, 3);
     }
-    
+
     var xstr = total.toString();
     if (xstr.indexOf(".") <= -1) {
         xstr = xstr + ".00";
@@ -232,12 +236,12 @@ function useQueryVars() {
         basecur = 2;
         steemPrice();
     }
-} 
+}
 
 window.onload = function () {
     useQueryVars();
     setTimeout(steemPrice, 500);
-    removeBaseCurrencyIfNotLoaded();
+    removeLabelsIfNotLoaded();
     setTimeout(useQueryVars, 1000);
     setTimeout(steemPrice, 1500);
     setTimeout(steemPrice, 3000);
@@ -247,7 +251,7 @@ window.onload = function () {
     });
     $(".basecurrency").click(function () {
         console.log("base currency clicked");
-        basecur = (basecur+1) % numbasecurs;
+        basecur = (basecur + 1) % numbasecurs;
         var basestring = curtostring(basecur);
         document.getElementById("basecurrency1").innerHTML = basestring;
         // document.getElementById("basecurrency2").innerHTML = basestr;
