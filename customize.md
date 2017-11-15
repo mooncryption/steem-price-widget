@@ -15,7 +15,7 @@
   * **Height**: <input type="text" style="width:48px;" onchange="compilewidget()" id="choiceheight" name="choiceheight" value="180">px &nbsp;&nbsp;(at least 180)
 4. Border: 
   * <input type="checkbox" onclick="compilewidget()" id="choicenoborder">&nbsp;<b>Use No Border</b>
-  * <b> Border Color: </b> <input type="text" style="width:150px;" onchange="compilewidget()" id="choicebcolor" name="choicebcolor" value="steemblue"/> (_example:_ `purple`)
+  * <b> Border Color: </b> <input type="text" style="width:150px;" onchange="compilewidget()" id="choicebcolor" name="choicebcolor" value="steemblue"/> (examples: `purple`, `red`, `rgb(255,0,0)`)
 <br><br>
 
 ### Copy your Source Code!
