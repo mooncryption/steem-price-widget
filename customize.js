@@ -1,7 +1,9 @@
 // customize.js
 // created by @mooncryption on STEEM
 
-var code = "<h3>Result here :) </h3>"
+var code = "<h3>Result here :) </h3>";
+var minWidth = 320, maxWidth = 480;
+var minHeight = 180, maxHeight = 240;
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -11,13 +13,13 @@ function compilewidget() {
 
     var choiceWidth = parseFloat(document.getElementById("choicewidth").value);
     var choiceHeight = parseFloat(document.getElementById("choiceheight").value);
-    if (choiceWidth < 320 || choiceWidth > 1080 || !(isNumeric(choiceWidth))) {
-        choiceWidth = 320;
-        document.getElementById("choicewidth").value = 320;
+    if (choiceWidth < minWidth || choiceWidth > maxWidth || !(isNumeric(choiceWidth))) {
+        choiceWidth = minWidth;
+        document.getElementById("choicewidth").value = minWidth;
     }
-    if (choiceHeight < 180 || choiceHeight > 320 || !(isNumeric(choiceHeight))) {
-        choiceHeight = 280;
-        document.getElementById("choiceheight").value = 280;
+    if (choiceHeight < minHeight || choiceHeight > maxHeight || !(isNumeric(choiceHeight))) {
+        choiceHeight = minHeight;
+        document.getElementById("choiceheight").value = minHeight;
     }
     var prechoiceBG = !(document.getElementById("choicenobg").checked);
     var choiceBG = "false";
