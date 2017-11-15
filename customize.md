@@ -1,6 +1,11 @@
+In the tool below, edit your options by clicking on the various buttons and editing the height/width/etc. After editing, press enter or click outside to see how your options look on the right-hand side of the page.
+
+Lastly, scroll to the bottom of your page to copy your unique HTML code, and paste it into your website!
+
+
 ## Use the STEEM Price Widget!
 <div class="pull-right" id="widgetsample">
-<em>loading ...</em>
+<em>...</em>
 </div>
 
 1. Default Base Currency: 
@@ -20,8 +25,9 @@
 
 ### Copy your Source Code!
 <code id="widgetcode" lang="html" language="html">
-loading..
+(loading)
 </code>
+<button onclick="getCodeAlert()" name="getCodeAlert" id="getCodeAlert"><b>Copy your Code!</b></button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
 <script src="customize.js"></script>
