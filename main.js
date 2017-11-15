@@ -161,8 +161,10 @@ function steemPrice() {
     }
     if (doneloading == false) {
         document.getElementById("basecurrency1").style.display = "none";
+        document.getElementById("bottomtext").style.display = "none";
     } else {
         document.getElementById("basecurrency1").style.display = "";
+        document.getElementById("bottomtext").style.display = "";
     }
     // console.log("Current Average STEEM Price: " + xstr)
     document.getElementById("steemprice").innerHTML = xstr;
