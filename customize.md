@@ -27,7 +27,7 @@ Lastly, scroll to the bottom of your page to copy your unique HTML code, and pas
 <code id="widgetcode" lang="html" language="html">
 (loading)
 </code>
-<br>
+<br><br>
 <button onclick="getCodeAlert()" name="getCodeAlert" id="getCodeAlert"><b>Copy your Code!</b></button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
