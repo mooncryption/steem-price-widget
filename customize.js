@@ -2,15 +2,20 @@
 // created by @mooncryption on STEEM
 
 var code = "<h3>Result here :) </h3>"
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+  
 function compilewidget() {
 
     var choiceWidth = parseFloat(document.getElementById("choicewidth").value);
     var choiceHeight = parseFloat(document.getElementById("choiceheight").value);
-    if (choiceWidth < 320 || choiceWidth > 1080) {
+    if (choiceWidth < 320 || choiceWidth > 1080 || !(isNumeric(choiceWidth))) {
         choiceWidth = 320;
         document.getElementById("choicewidth").value = 320;
     }
-    if (choiceHeight < 180 || choiceHeight > 320) {
+    if (choiceHeight < 180 || choiceHeight > 320 || !(isNumeric(choiceHeight))) {
         choiceHeight = 280;
         document.getElementById("choiceheight").value = 280;
     }
